@@ -1,0 +1,45 @@
+.text{
+   position: relative;
+}
+
+
+.text::before{
+    content: "Franck Kanza";
+    color: red ;
+    animation: words 30s infinite;
+    
+}
+
+.text::after{
+    content:'';
+    background-color: #19082E ;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 2px solid red;
+    right: -8px;
+    animation: cursor .6s infinite, typing 30s infinite;
+   
+}
+
+@keyframes cursor{
+   to { border-left: 2px solid #19082E ; }
+}
+
+@keyframes words {
+    0%, 20% { content: "Developper"}
+    21%, 40% { content: "Available"}
+    41%, 60% { content: "Freelancer"}
+    61%, 80% { content: "Available"}
+    81%, 100% { content: "Freelancer"}
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
